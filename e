@@ -1,7 +1,5 @@
 
 
-
-
 getgenv().IrisAd = true
 if game.PlaceId ~= 11312500614 then
 	local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
@@ -62,7 +60,7 @@ elseif game.PlaceId == 11312500614 then
 
 	getgenv().rejoin = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
 		if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
-			if getgenv().Config.ServerHopOnKick == true then
+			if getgenv().Config.ServerHop == true then
 				local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
 				module:Teleport(game.PlaceId)
 			end
@@ -77,7 +75,7 @@ elseif game.PlaceId == 11312500614 then
 
 	function sh()
 		if player then
-			if getgenv().Config.ServerHopOnDeath == true then
+			if getgenv().Config.ServerHop == true then
 				local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
 				module:Teleport(game.PlaceId)
 
@@ -150,7 +148,7 @@ end)
 
 
 	function getZone(zone, rq, what)
-	if plr and plr.Character:WaitForChild("Humanoid") then
+	if plr then
 		for i,v in pairs(Zones:FindFirstChild(zone):GetChildren()) do
 			if v:IsA("BasePart") then
 				if what == "req" then
@@ -305,6 +303,7 @@ if plr.Character.Humanoid then
 
 				while wait() do
 					if _G.updb == true  then
+					if plr then
 						local BT = data:FindFirstChild("BT").Value
 						availableBT = {}
 						BTBigToSmall = {}
@@ -327,10 +326,10 @@ if plr.Character.Humanoid then
 							table.insert(finalBT, availableBT[key])
 						end
 						getZone("BT",finalBT[#finalBT], "dmg")
+						if plr.Character:WaitForChild("Humanoid") then
 						plr.Character.Humanoid.WalkSpeed = 0
 						plr.Character.Humanoid.JumpPower = 0
-						local plr = game.Players.LocalPlayer
-						local gf = plr.Name
+						end
 						for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 							if v.name == "BTTool" then
 								v.Parent = game.Players.LocalPlayer.Character
@@ -338,7 +337,7 @@ if plr.Character.Humanoid then
 						end
 
 
-						game.Workspace[gf]:WaitForChild("BTTool"):Activate()
+						game.Workspace:WaitForChild(gf):WaitForChild("BTTool"):Activate()
 
 
 
@@ -346,7 +345,7 @@ if plr.Character.Humanoid then
 
 
 
-
+end
 
 
 
