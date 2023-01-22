@@ -1,5 +1,7 @@
 
 
+
+
 getgenv().IrisAd = true
 if game.PlaceId ~= 11312500614 then
 	local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
@@ -148,7 +150,7 @@ end)
 
 
 	function getZone(zone, rq, what)
-	if plr then
+	if plr and plr.Character:WaitForChild("Humanoid") then
 		for i,v in pairs(Zones:FindFirstChild(zone):GetChildren()) do
 			if v:IsA("BasePart") then
 				if what == "req" then
