@@ -370,14 +370,7 @@ if plr.Character.Humanoid then
 						plr.Character.Humanoid.WalkSpeed = 0
 						plr.Character.Humanoid.JumpPower = 0
 						end
-						for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-							if v.name == "BTTool" then
-								v.Parent = game.Players.LocalPlayer.Character
-							end
-						end
-
-
-						game.Workspace:WaitForChild(gf):WaitForChild("BTTool"):Activate()
+					
 
 
 
@@ -456,12 +449,6 @@ end
 						plr.Character.Humanoid.WalkSpeed = 0
 						plr.Character.Humanoid.JumpPower = 0
 
-
-						for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-							if v.name == "PPTool" then
-								v.Parent = game.Players.LocalPlayer.Character
-							end
-						end
 
 
 
