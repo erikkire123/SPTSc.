@@ -106,7 +106,7 @@ end
 	task.spawn(function()
  while wait() do
   				if  game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("Play")  then 
-				if not game.Players.LocalPlayer.Character then
+				if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health == 0 then
 if getgenv().Config.ServerHopOnDeath == false then
 
 local vim = game:GetService('VirtualInputManager')
