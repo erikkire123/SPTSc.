@@ -105,7 +105,8 @@ end
 	end
 	task.spawn(function()
  while wait() do
-  				if  game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("Play") and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then 
+  				if  game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("Play")  then 
+				if not game.Players.LocalPlayer.Character then
 if getgenv().Config.ServerHopOnDeath == false then
 
 local vim = game:GetService('VirtualInputManager')
@@ -140,6 +141,7 @@ local plr = game:GetService("Players").LocalPlayer
     plr.CameraMaxZoomDistance = 400
 
 end
+  end
   end
 end
 end)
