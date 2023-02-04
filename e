@@ -50,7 +50,7 @@ elseif game.PlaceId == 11312500614 then
 	warn("You cant put something other than a number or false")
 	end
 
-		local Event = game:GetService("ReplicatedStorage").RespawnEvent
+		
 			if plr.PlayerGui:FindFirstChild("Play") then
 			if not game.Players.LocalPlayer.Character then 
 local vim = game:GetService('VirtualInputManager')
